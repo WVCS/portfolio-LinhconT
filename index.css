@@ -3,10 +3,12 @@
 *:after {
   box-sizing: border-box;
 }
-
+html {
+  cursor: none;
+}
 body {
   margin: 40px;
-  font-family: 'Open Sans', 'sans-serif';
+  font-family: "Open Sans", "sans-serif";
   background-color: #fff;
   color: #444;
 }
@@ -26,10 +28,18 @@ p {
   padding: 10px;
 }
 
-.media > .title { grid-area: title; }
-.media > .img { grid-area: img; }
-.media > .content { grid-area: bd; }
-.media > .footer { grid-area: ft; }
+.media > .title {
+  grid-area: title;
+}
+.media > .img {
+  grid-area: img;
+}
+.media > .content {
+  grid-area: bd;
+}
+.media > .footer {
+  grid-area: ft;
+}
 
 .media {
   display: grid;
@@ -41,9 +51,7 @@ p {
     "ft";
 }
 
-
 @media (min-width: 600px) {
-
   /* clearfix*/
   .media:after {
     content: "";
@@ -61,7 +69,7 @@ p {
     margin: 0 10px 0 0;
     width: 150px;
   }
-  
+
   .media .footer {
     background-color: #eee;
     padding: 10px;
@@ -80,7 +88,7 @@ p {
     margin: 0 160px 0 0;
   }
 
-  @supports(display: grid ) {
+  @supports (display: grid) {
     /* override */
     .media > *,
     .media.media-flip > * {
@@ -107,7 +115,7 @@ p {
     }
 
     .media.media-flip {
-      grid-template-columns: 3fr 150px ;
+      grid-template-columns: 3fr 150px;
       grid-template-areas:
         "title img"
         "bd img"
@@ -124,11 +132,13 @@ p {
 
     /* nested */
     .media > .media {
-      grid-column: 2 / -1 ;
+      grid-column: 2 / -1;
       margin: 0; /* override */
       margin-top: 1em;
     }
   }
+}
 
-
+a {
+  text-decoration: none;
 }
